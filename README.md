@@ -23,14 +23,18 @@ In creating the node group, it is important to ensure that all the necessary pol
 
 **Part 4**: **Creation of deployment and services for access to the App (ref code: eks.py)**
 The image value in the deployment script must tally with the image URi in our ECR registry. Thereafter the script is actived using 
+                        
                          python3 <name of deployment script>
 
 The smooth functionality of the deployment and services can be confirmed through the following checks; 
+                        
                           kubectl get deployment -n default (check deployments)
+                        
                           kubectl get service -n default (check service)
+                         
                           kubectl get pods -n default (to check the pods)
 
 If pods and services are confirmed to be working satisfactorily, the port can be exposed for web access using;
 
-                         kubectl port-forward service/<service_name> 5000:5000
+                          kubectl port-forward service/<service_name> 5000:5000
 
